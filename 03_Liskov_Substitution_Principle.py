@@ -4,6 +4,11 @@
 
 from abc import ABC, abstractmethod
 
+class Contact:
+    def __init__(self, name, email, phone):
+        self.name = name
+        self.email = email
+        self.phone = phone
 
 class Notification(ABC):
     @abstractmethod
@@ -19,13 +24,6 @@ class Email(Notification):
 class SMS(Notification):
     def notify(self, _message_, phone):
         print(f'send {_message_} to {phone}')
-
-
-class Contact:
-    def __init__(self, name, email, phone):
-        self.name = name
-        self.email = email
-        self.phone = phone
 
 
 class NotificationManager:
